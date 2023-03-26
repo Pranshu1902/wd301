@@ -1,7 +1,7 @@
 import * as React from 'react';
 import "./TaskCard.css";
 
-const TaskCard = (props) => {
+const TaskCard = (props: any) => {
   console.log(props);
   return (
     <div className="TaskItem">
