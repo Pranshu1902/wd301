@@ -15,7 +15,6 @@ function App() {
         month: "short",
         year: "numeric",
       }),
-
       completedDate: "",
       assigneeName: "Pranshu Aggarwal",
     },
