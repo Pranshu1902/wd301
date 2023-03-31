@@ -2,11 +2,19 @@ import React from "react";
 
 interface TaskProp {
   title: string;
+  description: string;
+  dueDate: string;
 }
 
 class Task extends React.Component<TaskProp> {
   render() {
-    return <div>{this.props.title}</div>;
+    return (
+      <div className="TaskItem">
+        <h1>{this.props.title}</h1>
+        <h3>{this.props.description}</h3>
+        {this.props.dueDate}
+      </div>
+    );
   }
 }
 
