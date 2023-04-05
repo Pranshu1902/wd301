@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import TaskCard from "./TaskCard";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
         month: "short",
         year: "numeric",
       }),
-      completedDate: "",
+      completedAtDate: "",
       assigneeName: "Pranshu Aggarwal",
     },
     {
@@ -25,13 +25,13 @@ function App() {
         month: "short",
         year: "numeric",
       }),
-      completedDate: "",
+      completedAtDate: "",
       assigneeName: "Pranshu Aggarwal",
     },
     {
       title: "Design the mockup",
       dueDate: "",
-      completedDate: yesterday.toLocaleDateString("en-GB", {
+      completedAtDate: yesterday.toLocaleDateString("en-GB", {
         day: "numeric",
         month: "short",
         year: "numeric",
@@ -42,7 +42,7 @@ function App() {
     {
       title: "Get the approval from principal",
       dueDate: "",
-      completedDate: yesterday.toLocaleDateString("en-GB", {
+      completedAtDate: yesterday.toLocaleDateString("en-GB", {
         day: "numeric",
         month: "short",
         year: "numeric",
@@ -68,7 +68,7 @@ function App() {
               <TaskCard
                 title={task.title}
                 dueDate={task.dueDate}
-                completedDate={task.completedDate}
+                completedAtDate={task.completedAtDate}
                 assigneeName={task.assigneeName}
               />
             ))}
@@ -77,12 +77,12 @@ function App() {
         <div className="rounded-lg p-2 border-4 w-1/3">
           <p className="flex justify-center text-xl font-medium pb-2">Done</p>
           {tasks
-            .filter((task) => task.completedDate.length > 0)
+            .filter((task) => task.completedAtDate.length > 0)
             .map((task) => (
               <TaskCard
                 title={task.title}
                 dueDate={task.dueDate}
-                completedDate={task.completedDate}
+                completedAtDate={task.completedAtDate}
                 assigneeName={task.assigneeName}
               />
             ))}
