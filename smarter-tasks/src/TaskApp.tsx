@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { TaskItem } from "./types";
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
@@ -12,9 +12,26 @@ const TaskApp = (props: TaskAppProp) => {
   const [taskAppState, setTaskAppState] = React.useState<TaskAppState>({
     tasks: [],
   });
+
   const addTask = (task: TaskItem) => {
     setTaskAppState({ tasks: [...taskAppState.tasks, task] });
   };
+
+  useEffect(() => {
+    document.title = `You have ${taskAppState.tasks.length} items`;
+  }, [taskAppState.tasks]);
+
+  // React.useEffect(() => {
+  //   // This is correct usage
+  //     const saveTasks = async () => {
+  //       const token = await saveTasksToBackend(taskAppState.tasks);
+  //     }
+  //     saveTasks();
+  //     return () => {
+  //       cancelAPI(token);
+  //     };
+  //   }, [taskAppState.tasks]);
+
   return (
     <div>
       <TaskForm addTask={addTask} />
