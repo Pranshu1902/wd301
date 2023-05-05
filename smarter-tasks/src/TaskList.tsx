@@ -4,6 +4,7 @@ import { TaskItem } from "./types";
 
 interface Props {
   tasks: TaskItem[];
+  removeTask: (t: TaskItem) => void;
 }
 
 interface State {}
@@ -13,9 +14,8 @@ class TaskList extends React.Component<Props, State> {
     return this.props.tasks.map((task, idx) => (
       <Task
         key={idx}
-        title={task.title}
-        description={task.description}
-        dueDate={task.dueDate}
+        task={task}
+        remove={this.props.removeTask}
       />
     ));
   }

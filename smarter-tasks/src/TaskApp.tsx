@@ -2,6 +2,7 @@ import React from "react";
 import { TaskItem } from "./types";
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
 interface TaskAppProp {}
 interface TaskAppState {
@@ -15,6 +16,10 @@ class TaskApp extends React.Component<TaskAppProp, TaskAppState> {
     };
   }
 
+  // const [taskAppState, setTaskAppState] = useLocalStorage<TaskAppState>("tasks", {
+  //   tasks: [],
+  // });  
+
   addTask = (task: TaskItem) => {
     this.setState((state, props) => {
       return {
@@ -22,6 +27,14 @@ class TaskApp extends React.Component<TaskAppProp, TaskAppState> {
       };
     });
   };
+
+  deleteTask = (task: TaskItem) => {
+    this.setState((state, props) => {
+      return {
+        tasks: state.tasks.filter((t) => t !== task),
+      };
+    });
+  }
 
   render() {
     return (
@@ -39,7 +52,7 @@ class TaskApp extends React.Component<TaskAppProp, TaskAppState> {
               Pending
             </h1>
             <TaskForm addTask={this.addTask} />
-            <TaskList tasks={this.state.tasks} />
+            <TaskList tasks={this.state.tasks} removeTask={this.deleteTask} />
           </div>
         </div>
       </div>
