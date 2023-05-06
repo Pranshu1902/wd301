@@ -11,3 +11,13 @@
 .App {
   text-align: center;
 }
+
+.deleteTaskButton {
+  color: red;
+  size: 10px;
+  cursor: pointer;
+  border-radius: 100%;
+  border-color: red;
+  border-style: solid;
+  width: 17px;
+}

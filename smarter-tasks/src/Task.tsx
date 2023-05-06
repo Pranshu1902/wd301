@@ -10,12 +10,12 @@ interface TaskProp {
 class Task extends React.Component<TaskProp> {
   render() {
     return (
-      <div className="TaskItem">
+      <li className="TaskItem">
         <h1>{this.props.task.title}</h1>
         <h3>{this.props.task.description}</h3>
         {this.props.task.dueDate}
-        <div onClick={() => this.props.remove(this.props.task)}>delete</div>
-      </div>
+        <div className="deleteTaskButton" onClick={() => this.props.remove(this.props.task)}>X</div>
+      </li>
     );
   }
 }

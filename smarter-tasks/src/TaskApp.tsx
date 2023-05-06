@@ -16,7 +16,7 @@ class TaskApp extends React.Component<TaskAppProp, TaskAppState> {
     };
   }
 
-  // const [taskAppState, setTaskAppState] = useLocalStorage<TaskAppState>("tasks", {
+  // const [taskAppState, setTaskAppState] = useLocalStorage<TaskAppState>(key: "tasks",{
   //   tasks: [],
   // });  
 
