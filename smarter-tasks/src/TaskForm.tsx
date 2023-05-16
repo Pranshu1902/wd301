@@ -25,11 +25,13 @@ class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
     event.preventDefault();
     if (this.state.title.length > 0 && this.state.dueDate.length > 0) {
       const newTask = {
+        id: Number(new Date()).toString(),
         title: this.state.title,
         description: this.state.description,
         dueDate: this.state.dueDate,
       };
       this.props.addTask(newTask);
+      console.log(newTask.id);
       this.setState({ title: "", description: "", dueDate: "" });
     }
   };
