@@ -12,9 +12,9 @@ interface State {}
 class TaskList extends React.Component<Props, State> {
   render() {
     return this.props.tasks.map((task, idx) => (
-      <ul>
+      <a href={`/tasks/${task.id}`}>
         <Task key={idx} task={task} remove={this.props.removeTask} />
-      </ul>
+      </a>
     ));
   }
 }
