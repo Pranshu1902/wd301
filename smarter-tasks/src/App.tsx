@@ -27,8 +27,8 @@ function App() {
           element={<ProtectedRoute element={<TaskDetailsPage />} />}
         />
         <Route path="/signin" element={<Signin />} />
-        <Route path="/*" element={<Navigate to="/notfound" />} />
         <Route path="/notfound" element={<NotFound />} />
+        <Route path="/*" element={<Navigate to="/notfound" />} />
       </Routes>
     </div>
   );
