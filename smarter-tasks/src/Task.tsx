@@ -13,7 +13,7 @@ class Task extends React.Component<TaskProp> {
     return (
       <li className="TaskItem">
         <Link to={`/tasks/${this.props.task.id}`}>
-          <h2>{this.props.task.title}</h2>
+          <h2 className="text-base">{this.props.task.title}</h2>
         </Link>
         <h3>{this.props.task.description}</h3>
         {this.props.task.dueDate}
