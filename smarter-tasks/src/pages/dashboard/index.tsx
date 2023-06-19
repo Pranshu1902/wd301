@@ -1,8 +1,8 @@
 import React from "react";
 
 const Dashboard: React.FC = () => {
-  const name = "Pranshu";
-  const email = "pranshu1902@gmail.com";
+  let userData = localStorage.getItem("userData");
+  let data = userData ? JSON.parse(userData) : undefined;
 
   const logout = () => {
     localStorage.removeItem("authToken");
@@ -17,9 +17,9 @@ const Dashboard: React.FC = () => {
       </h1>
       <div className="flex justify-between gap-4">
         <p>
-          {name}
+          {data.name}
           <br />
-          {email}
+          {data.email}
         </p>
         <button
           id="logout-link"
